@@ -40,20 +40,27 @@ export const constantRouterMap = [
     path: '/teacher',
     component: Layout,
     redirect: '/teacher/table',
-    name: 'Teacher Management',
-    meta: { title: 'Teacher Management', icon: 'example' },
+    name: 'Tutor Management',
+    meta: { title: 'Tutor Management', icon: 'example' },
     children: [
       {
         path: 'table',
-        name: 'Teacher List',
+        name: 'Tutor List',
         component: () => import('@/views/edu/teacher/list'),
-        meta: { title: 'Teacher List', icon: 'table' }
+        meta: { title: 'Tutor List', icon: 'table' }
       },
       {
         path: 'save',
-        name: 'Add Teacher',
+        name: 'Add Tutor',
         component: () => import('@/views/edu/teacher/save'),
-        meta: { title: 'Add Teacher', icon: 'tree' }
+        meta: { title: 'Add Tutor', icon: 'tree' }
+      },
+      {
+        path: 'edit/:id',
+        name: 'EduTeacherEdit',
+        component: () => import('@/views/edu/teacher/save'),
+        meta: { title: 'Edit Tutor', noCache:true },
+        hidden:true
       }
     ]
   },
