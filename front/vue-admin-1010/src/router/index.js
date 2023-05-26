@@ -65,6 +65,27 @@ export const constantRouterMap = [
     ]
   },
   {
+    path: '/subject',
+    component: Layout,
+    redirect: '/subject/table',
+    name: 'Curriculum Management',
+    meta: { title: 'Curriculum Management', icon: 'example' },
+    children: [
+      {
+        path: 'list',
+        name: 'Curriculum List',
+        component: () => import('@/views/edu/subject/list'),
+        meta: { title: 'Curriculum List', icon: 'table' }
+      },
+      {
+        path: 'save',
+        name: 'Add Curriculum',
+        component: () => import('@/views/edu/subject/save'),
+        meta: { title: 'Add Curriculum', icon: 'tree' }
+      }
+    ]
+  }, 
+  {
     path: '/example',
     component: Layout,
     redirect: '/example/table',

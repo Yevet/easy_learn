@@ -120,8 +120,10 @@ public class EduTeacherController {
         if(!StringUtils.isEmpty(end)) {
             wrapper.le("gmt_create",end);
         }
-        //sort
+
+        //排序
         wrapper.orderByDesc("gmt_create");
+
         //调用方法实现条件查询分页
         teacherService.page(pageTeacher,wrapper);
 
@@ -129,7 +131,6 @@ public class EduTeacherController {
         List<EduTeacher> records = pageTeacher.getRecords(); //数据list集合
         return R.ok().data("total",total).data("rows",records);
     }
-
 
     //添加讲师接口的方法
     @PostMapping("addTeacher")
