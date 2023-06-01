@@ -30,44 +30,44 @@
           </el-form-item>
         </el-form>
       </div>
-    </template>
+</template>
 
-    <script>
-    export default{
-        data(){
-            return{
-                BASE_API: process.env.BASE_API, // 接口API地址
-                fileUploadBtnText: 'Upload to Server', // 按钮文字
-                importBtnDisabled: false, // 按钮是否禁用,
-                loading: false
-            }
+<script>
+export default{
+    data(){
+        return{
+            BASE_API: process.env.BASE_API, // 接口API地址
+            fileUploadBtnText: 'Upload to Server', // 按钮文字
+            importBtnDisabled: false, // 按钮是否禁用,
+            loading: false
+        }
+
+    },
+    created(){
+
+    },
+    methods:{
+        submitUpload(){
+            this.importBtnDisabled = true
+            this.loading = true
+            this.$refs.upload.submit()
+        },
+        fileUploadSuccess(response){
+            this.loading = false
+            this.$message({
+                type: 'success',
+                message: 'Success Add!'
+            })
+            this.$router.push({path:'/subject/list'})
 
         },
-        created(){
-
-        },
-        methods:{
-            submitUpload(){
-                this.importBtnDisabled = true
-                this.loading = true
-                this.$refs.upload.submit()
-            },
-            fileUploadSuccess(response){
-                this.loading = false
-                this.$message({
-                    type: 'success',
-                    message: 'Success Add!'
-                })
-
-
-            },
-            fileUploadError(){
-                this.loading = false
-                this.$message({
-                    type: 'error',
-                    message: 'Fail to Add!'
-                })
-            }
+        fileUploadError(){
+            this.loading = false
+            this.$message({
+                type: 'error',
+                message: 'Fail to Add!'
+            })
         }
     }
-    </script>
+}
+</script>

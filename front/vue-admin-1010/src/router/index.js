@@ -40,8 +40,8 @@ export const constantRouterMap = [
     path: '/teacher',
     component: Layout,
     redirect: '/teacher/table',
-    name: 'Tutor Management',
-    meta: { title: 'Tutor Management', icon: 'example' },
+    name: 'Manage Tutor',
+    meta: { title: 'Manage Tutor', icon: 'example' },
     children: [
       {
         path: 'table',
@@ -68,20 +68,62 @@ export const constantRouterMap = [
     path: '/subject',
     component: Layout,
     redirect: '/subject/table',
-    name: 'Curriculum Management',
-    meta: { title: 'Curriculum Management', icon: 'example' },
+    name: 'Manage Subject',
+    meta: { title: 'Manage Subject', icon: 'example' },
     children: [
       {
         path: 'list',
-        name: 'Curriculum List',
+        name: 'Subject List',
         component: () => import('@/views/edu/subject/list'),
-        meta: { title: 'Curriculum List', icon: 'table' }
+        meta: { title: 'Subject List', icon: 'table' }
       },
       {
         path: 'save',
-        name: 'Add Curriculum',
+        name: 'Add Subject',
         component: () => import('@/views/edu/subject/save'),
-        meta: { title: 'Add Curriculum', icon: 'tree' }
+        meta: { title: 'Add Subject', icon: 'tree' }
+      }
+    ]
+  }, 
+  {
+    path: '/course',
+    component: Layout,
+    redirect: '/course/list',
+    name: 'Manage Course',
+    meta: { title: 'Manage Course', icon: 'example' },
+    children: [
+      {
+        path: 'list',
+        name: 'Course List',
+        component: () => import('@/views/edu/course/list'),
+        meta: { title: 'Course List', icon: 'table' }
+      },
+      {
+        path: 'info',
+        name: 'Add Course',
+        component: () => import('@/views/edu/course/info'),
+        meta: { title: 'Add Course', icon: 'tree' }
+      },
+      {
+        path: 'info/:id',
+        name: 'EduCourseInfoEdit',
+        component: () => import('@/views/edu/course/info'),
+        meta: { title: 'Edit Course Information', noCache: true },
+        hidden: true
+      },
+      {
+        path: 'chapter/:id',
+        name: 'EduCourseChapterEdit',
+        component: () => import('@/views/edu/course/chapter'),
+        meta: { title: 'Edit Course Chapter', noCache: true },
+        hidden: true
+      },
+      {
+        path: 'publish/:id',
+        name: 'EduCoursePublishEdit',
+        component: () => import('@/views/edu/course/publish'),
+        meta: { title: 'Submit Course', noCache: true },
+        hidden: true
       }
     ]
   }, 

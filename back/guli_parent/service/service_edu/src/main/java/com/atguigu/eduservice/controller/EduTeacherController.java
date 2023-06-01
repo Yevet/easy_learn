@@ -120,7 +120,6 @@ public class EduTeacherController {
         if(!StringUtils.isEmpty(end)) {
             wrapper.le("gmt_create",end);
         }
-
         //排序
         wrapper.orderByDesc("gmt_create");
 

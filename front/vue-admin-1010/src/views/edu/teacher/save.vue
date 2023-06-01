@@ -64,7 +64,7 @@ export default {
         level: 1,
         career: '',
         intro: '',
-        avatar: 'https://edu-easy01.oss-cn-hangzhou.aliyuncs.com/2023/05/26/e6ad907e52654385a61f05e65702c330file.png'
+        avatar: '/static/2.jpg'
       },
       imagecropperShow:false,
       imagecropperKey:0,
