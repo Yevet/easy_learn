@@ -48,7 +48,14 @@ public class EduChapterController {
 
     @DeleteMapping("{chapterId}")
     public R deleteChapter(@PathVariable String chapterId){
-        chapterService.
+        boolean flag=chapterService.deleteChapter(chapterId);
+        if(flag){
+            return R.ok();
+        }else{
+            return R.error();
+        }
+
     }
 }
+
 

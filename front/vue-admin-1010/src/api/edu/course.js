@@ -27,5 +27,25 @@ export default{
             method: 'post',
             data: courseInfo
           })
+    },
+    getPublishCourseInfo(id) {
+        return request({
+            url: '/eduservice/course/getPublishCourseInfo/'+id,
+            method: 'get'
+          })
+    },
+
+    publishCourse(id) {
+        return request({
+            url: '/eduservice/course/publishCourse'+id,
+            method: 'post'
+          })
+    },
+    getListCourse(){
+        return request({
+            url: '/eduservice/course',
+            method: 'get'
+          })
     }
+
 }
