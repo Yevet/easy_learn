@@ -42,16 +42,16 @@
     </li>
 </ul>
 <div>
-    <el-button @click="previous">上一步</el-button>
-    <el-button :disabled="saveBtnDisabled" type="primary" @click="next">下一步</el-button>
+    <el-button @click="previous">Back</el-button>
+    <el-button :disabled="saveBtnDisabled" type="primary" @click="next">Next Step</el-button>
 </div>
 <!-- 添加和修改章节表单 -->
 <el-dialog :visible.sync="dialogChapterFormVisible" title="添加章节">
     <el-form :model="chapter" label-width="120px">
-        <el-form-item label="章节标题">
+        <el-form-item label="Title">
             <el-input v-model="chapter.title"/>
         </el-form-item>
-        <el-form-item label="章节排序">
+        <el-form-item label="Sort">
             <el-input-number v-model="chapter.sort" :min="0" controls-position="right"/>
         </el-form-item>
     </el-form>
@@ -75,9 +75,28 @@
         <el-radio :label="false">default</el-radio>
       </el-radio-group>
     </el-form-item>
-    <el-form-item label="Upload Video">
-      <!-- TODO -->
-    </el-form-item>
+    
+<el-form-item label="Upload Video">
+    <el-upload
+           :on-success="handleVodUploadSuccess"
+           :on-remove="handleVodRemove"
+           :before-remove="beforeVodRemove"
+           :on-exceed="handleUploadExceed"
+           :file-list="fileList"
+           :action="BASE_API+'/eduvod/video/uploadAlyiVideo'"
+           :limit="1"
+           class="upload-demo">
+    <el-button size="small" type="primary">Upload Video</el-button>
+    <el-tooltip placement="right-end">
+        <div slot="content">最大支持1G,<br>
+            支持3GP、ASF、AVI、DAT、DV、FLV、F4V、<br>
+            GIF、M2T、M4V、MJ2、MJPEG、MKV、MOV、MP4、<br>
+            MPE、MPG、MPEG、MTS、OGG、QT、RM、RMVB、<br>
+            SWF、TS、VOB、WMV、WEBM 等视频格式上传</div>
+        <i class="el-icon-question"/>
+    </el-tooltip>
+    </el-upload>
+</el-form-item>
   </el-form>
   <div slot="footer" class="dialog-footer">
     <el-button @click="dialogVideoFormVisible = false">Cancel</el-button>
@@ -104,10 +123,13 @@
                   title:'',
                   sort:0,
                   free:0,
-                  videoSourceId:''
+                  videoSourceId:'',
+                  videoOriginName:''
                 },
                 dialogChapterFormVisible:false,
-                dialogVideoFormVisible:false
+                dialogVideoFormVisible:false,
+                fileList: [],//上传文件列表
+                BASE_API: process.env.BASE_API // 接口API地址
             }
         },
         created(){
@@ -118,6 +140,28 @@
           
         },
         methods:{
+          handleVodRemove(){
+            video.deleteAliyunvod(this.video.videoSourceId)
+            .then(response=>{
+              this.$message({
+                        type: 'success',
+                        message: 'Successfully Delete!'
+                    });
+                    this.fileList=[]
+                    this.video.videoSourceId = ''
+                    this.video.videoOriginName=''
+            })
+          },
+          beforeVodRemove(file,fileList){
+            return this.$confirm(`Confirm to remove ${file.name}?`);
+          },
+          handleVodUploadSuccess(response,file,fileList){
+            this.video.videoSourceId = response.data.videoId
+            this.video.videoOriginName=file.name
+          },
+          handleUploadExceed(){
+            this.$message.warning('Please delete the previous uploaded video before upload new video.')
+          },
           removeVideo(id){
             this.$confirm('This section will be deleted permanently!', 'NOTICE', {
                 confirmButtonText: 'Yes',
