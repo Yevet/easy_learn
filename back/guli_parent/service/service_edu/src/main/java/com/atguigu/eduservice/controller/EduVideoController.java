@@ -2,9 +2,11 @@ package com.atguigu.eduservice.controller;
 
 
 import com.atguigu.commonutils.R;
+import com.atguigu.eduservice.client.VodClient;
 import com.atguigu.eduservice.entity.EduVideo;
 import com.atguigu.eduservice.service.EduVideoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -21,6 +23,8 @@ import org.springframework.web.bind.annotation.*;
 public class EduVideoController {
     @Autowired
     private EduVideoService videoService;
+    @Autowired
+    private VodClient vodClient;
 
     @PostMapping("addVideo")
     public R addVideo(@RequestBody EduVideo eduVideo){
@@ -30,6 +34,12 @@ public class EduVideoController {
     //todo
     @DeleteMapping("id")
     public R deleteVideo(@PathVariable String id){
+        EduVideo eduVideo=videoService.getById(id);
+        String videoSourceId = eduVideo.getVideoSourceId();
+        if(StringUtils.isEmpty(videoSourceId)) {
+            vodClient.removeAlyVideo(videoSourceId);
+        }
+
         videoService.removeById(id);
         return R.ok();
     }

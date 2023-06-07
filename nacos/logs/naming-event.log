@@ -1,0 +1,20 @@
+2023-06-07 17:24:51,756 INFO DEFAULT_GROUP@@service-edu {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [169.254.178.150:8001:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-06-07 17:24:51,758 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@service-edu, ips: 169.254.178.150:8001_true,
+
+2023-06-07 17:26:41,578 INFO DEFAULT_GROUP@@service-vod {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [169.254.178.150:8003:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-06-07 17:26:41,578 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@service-vod, ips: 169.254.178.150:8003_true,
+
+2023-06-07 17:27:11,624 INFO {POS} {IP-DISABLED} valid: 169.254.178.150:8003@DEFAULT@DEFAULT_GROUP@@service-vod, region: unknown, msg: client timeout after 15000, last beat: 1686130013304
+
+2023-06-07 17:27:11,848 INFO {POS} {IP-DISABLED} valid: 169.254.178.150:8001@DEFAULT@DEFAULT_GROUP@@service-edu, region: unknown, msg: client timeout after 15000, last beat: 1686130013244
+
+2023-06-07 17:27:26,913 INFO DEFAULT_GROUP@@service-vod {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [169.254.178.150:8003:unknown:DEFAULT_1.0_false_false_DEFAULT]
+
+2023-06-07 17:27:26,913 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@service-vod, ips: 
+
+2023-06-07 17:27:26,913 INFO DEFAULT_GROUP@@service-edu {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [169.254.178.150:8001:unknown:DEFAULT_1.0_false_false_DEFAULT]
+
+2023-06-07 17:27:26,913 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@service-edu, ips: 
+
