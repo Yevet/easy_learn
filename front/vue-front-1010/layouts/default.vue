@@ -4,42 +4,42 @@
       <header id="header">
         <section class="container">
           <h1 id="logo">
-            <a href="#" title="谷粒学院">
-              <img src="~/assets/img/logo.png" width="100%" alt="谷粒学院">
+            <a href="#" title="Easy Learn">
+              <img src="~/assets/img/logo.png" width="100%" alt="Easy Learn">
             </a>
           </h1>
           <div class="h-r-nsl">
             <ul class="nav">
               <router-link to="/" tag="li" active-class="current" exact>
-                <a>首页</a>
+                <a>Home</a>
               </router-link>
               <router-link to="/course" tag="li" active-class="current">
-                <a>课程</a>
+                <a>Courses</a>
               </router-link>
               <router-link to="/teacher" tag="li" active-class="current">
-                <a>名师</a>
+                <a>Tutors</a>
               </router-link>
               <router-link to="/article" tag="li" active-class="current">
-                <a>文章</a>
+                <a>Articles</a>
               </router-link>
               <router-link to="/qa" tag="li" active-class="current">
-                <a>问答</a>
+                <a>Q & A</a>
               </router-link>
             </ul>
             <!-- / nav -->
             <ul class="h-r-login">
               <li id="no-login">
-                <a href="/sing_in" title="登录">
+                <a href="/sing_in" title="Login">
                   <em class="icon18 login-icon">&nbsp;</em>
-                  <span class="vam ml5">登录</span>
+                  <span class="vam ml5">Login</span>
                 </a>
                 |
-                <a href="/sign_up" title="注册">
-                  <span class="vam ml5">注册</span>
+                <a href="/sign_up" title="Register">
+                  <span class="vam ml5">Register</span>
                 </a>
               </li>
               <li class="mr10 undis" id="is-login-one">
-                <a href="#" title="消息" id="headerMsgCountId">
+                <a href="#" title="Message" id="headerMsgCountId">
                   <em class="icon18 news-icon">&nbsp;</em>
                 </a>
                 <q class="red-point" style="display: none">&nbsp;</q>
@@ -56,7 +56,7 @@
                   >
                   <span class="vam disIb" id="userName"></span>
                 </a>
-                <a href="javascript:void(0)" title="退出" onclick="exit();" class="ml5">退出</a>
+                <a href="javascript:void(0)" title="Quit" onclick="exit();" class="ml5">Quit</a>
               </li>
               <!-- /未登录显示第1 li；登录后显示第2，3 li -->
             </ul>
@@ -98,12 +98,12 @@
             <section class="fl col-7">
               <section class="mr20">
                 <section class="b-f-link">
-                  <a href="#" title="关于我们" target="_blank">关于我们</a>|
-                  <a href="#" title="联系我们" target="_blank">联系我们</a>|
-                  <a href="#" title="帮助中心" target="_blank">帮助中心</a>|
-                  <a href="#" title="资源下载" target="_blank">资源下载</a>|
-                  <span>服务热线：010-56253825(北京) 0755-85293825(深圳)</span
-                  <span>Email：info@atguigu.com</span>
+                  <a href="#" title="About Us" target="_blank">About Us</a>|
+                  <a href="#" title="Connect Us" target="_blank">Connect Us</a>|
+                  <a href="#" title="Help Center" target="_blank">Help Center</a>|
+                  <a href="#" title="Resource Download" target="_blank">Resource Download</a>|
+                  <span>Tel：010-00000000 0755-00000000</span>
+                  <span>Email：xiangyiwen0218@gmail.com</span>
                 </section>
                 <section class="b-f-link mt10">
                   <span>©2018课程版权均归谷粒学院所有 京ICP备17055252号</span>
