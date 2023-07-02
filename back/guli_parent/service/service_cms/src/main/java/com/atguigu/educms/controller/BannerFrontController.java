@@ -14,24 +14,25 @@ import java.util.List;
 
 /**
  * <p>
- * 首页banner表 前端控制器
+ * 前台bannber显示
  * </p>
  *
  * @author testjava
- * @since 2023-06-20
+ * @since 2020-03-07
  */
 @RestController
 @RequestMapping("/educms/bannerfront")
 @CrossOrigin
 public class BannerFrontController {
+
     @Autowired
     private CrmBannerService bannerService;
 
+    //查询所有banner
     @GetMapping("getAllBanner")
-    public R getAllBanner(){
-        List<CrmBanner> list=bannerService.selectAllBanner();
+    public R getAllBanner() {
+        List<CrmBanner> list = bannerService.selectAllBanner();
         return R.ok().data("list",list);
     }
-
 }
 

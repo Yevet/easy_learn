@@ -11,9 +11,10 @@ import java.util.List;
  * </p>
  *
  * @author testjava
- * @since 2023-06-20
+ * @since 2020-03-07
  */
 public interface CrmBannerService extends IService<CrmBanner> {
 
+    //查询所有banner
     List<CrmBanner> selectAllBanner();
 }
