@@ -3,6 +3,7 @@ package msmservice.controller;
 import com.atguigu.commonutils.R;
 import com.atguigu.msmservice.service.MsmService;
 import com.atguigu.msmservice.utils.RandomUtil;
+import com.sun.deploy.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.util.StringUtils;
@@ -43,7 +44,7 @@ public class MsmController {
             redisTemplate.opsForValue().set(phone,code,5, TimeUnit.MINUTES);
             return R.ok();
         } else {
-            return R.error().message("短信发送失败");
+            return R.error().message("fail to send message");
         }
     }
 }
