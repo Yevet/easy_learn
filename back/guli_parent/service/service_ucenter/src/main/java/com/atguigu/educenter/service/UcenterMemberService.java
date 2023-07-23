@@ -1,6 +1,7 @@
 package com.atguigu.educenter.service;
 
 import com.atguigu.educenter.entity.UcenterMember;
+import com.atguigu.educenter.entity.vo.RegisterVo;
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
@@ -17,4 +18,6 @@ import org.springframework.context.annotation.ComponentScan;
 public interface UcenterMemberService extends IService<UcenterMember> {
 
     String login(UcenterMember member);
+
+    void register(RegisterVo registerVo);
 }

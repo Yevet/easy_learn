@@ -29,12 +29,12 @@
             <!-- / nav -->
             <ul class="h-r-login">
               <li id="no-login">
-                <a href="/sing_in" title="Login">
+                <a href="/login" title="Login">
                   <em class="icon18 login-icon">&nbsp;</em>
                   <span class="vam ml5">Login</span>
                 </a>
                 |
-                <a href="/sign_up" title="Register">
+                <a href="/register" title="Register">
                   <span class="vam ml5">Register</span>
                 </a>
               </li>
