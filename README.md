@@ -1,14 +1,14 @@
 # Easy Learn
 
-![image-20230929020756708](/Users/evenx/Codes/easy_learn/images/image-20230929020756708.png)
+![image-20230929020756708](./images/image-20230929020756708.png)
 
-![image-20230929020911354](/Users/evenx/Codes/easy_learn/images/image-20230929020911354.png)
+![image-20230929020911354](./images/image-20230929020911354.png)
 
-![image-20230929020959210](/Users/evenx/Codes/easy_learn/images/image-20230929020959210.png)
+![image-20230929020959210](./images/image-20230929020959210.png)
 
-![image-20230929021051513](/Users/evenx/Codes/easy_learn/images/image-20230929021051513.png)
+![image-20230929021051513](./images/image-20230929021051513.png)
 
-![image-20230929021159002](/Users/evenx/Codes/easy_learn/images/image-20230929021159002.png)
+![image-20230929021159002](./images/image-20230929021159002.png)
 
 Adopt B2C business model, use front and back end separation development mode. The project includes the background management system and the front user system, and the two systems contain the back-end interface part and the front page part respectively.
 
